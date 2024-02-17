@@ -251,7 +251,7 @@ class Page {
 			return;
 		}
 
-		let newBreakToken = this.layoutMethod.findBreakToken(this.wrapper, contents, this.startToken);
+		let newBreakToken = this.layoutMethod.findBreakToken(this.wrapper, contents, undefined, this.startToken);
 
 		if (newBreakToken) {
 			this.endToken = newBreakToken;
