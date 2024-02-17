@@ -556,7 +556,10 @@ class Layout {
 				let top = Math.round(pos.top);
 				let bottom = Math.floor(pos.bottom);
 
-				if (!range && (left >= end || top >= vEnd)) {
+				
+				// fix from https://github.com/pagedjs/pagedjs/pull/125
+				// for missing table rows when using repeated table headers on page breaks.
+				if (!range && (left >= end || top >= vEnd || (right >= end && node.tagName === "TR"))) {
 					// Check if it is a float
 					let isFloat = false;
 
