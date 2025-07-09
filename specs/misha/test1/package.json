@@ -1,0 +1,46 @@
+{
+  "name": "pagedjs-chrome-debug",
+  "version": "1.0.0",
+  "description": "Debug tools for PagedJS Chrome infinite loop issue",
+  "type": "module",
+  "main": "debug-runner.js",
+  "scripts": {
+    "debug": "node debug-runner.js",
+    "debug:chrome": "node chrome-test-automation.js",
+    "debug:comparison": "node browser-comparison.js",
+    "debug:quiet": "node debug-runner.js --quiet",
+    "debug:no-fixes": "node debug-runner.js --no-fixes",
+    "fix": "node apply-minimal-fix.js",
+    "test-fix": "node test-minimal-fix.js",
+    "test": "npm run debug",
+    "install-deps": "npm install",
+    "clean": "rm -rf debug-output debug-results comparison-output"
+  },
+  "dependencies": {
+    "puppeteer": "^24.12.1"
+  },
+  "devDependencies": {
+    "html2canvas": "^1.4.1"
+  },
+  "keywords": [
+    "pagedjs",
+    "chrome",
+    "debug",
+    "infinite-loop",
+    "printing",
+    "pdf"
+  ],
+  "author": "PagedJS Debug Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "."
+  },
+  "bugs": {
+    "url": "https://github.com/pagedjs/pagedjs/issues"
+  },
+  "homepage": "https://pagedjs.org"
+}

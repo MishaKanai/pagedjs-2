@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Realistic Browser Test Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-result { border: 1px solid #ddd; margin: 20px 0; padding: 15px; }
+        .screenshot-timeline { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 20px 0; }
+        .screenshot { border: 1px solid #ccc; padding: 5px; text-align: center; }
+        .screenshot img { max-width: 100%; height: auto; }
+        .content-analysis { background: #f9f9f9; padding: 10px; margin: 10px 0; }
+        .visible { color: green; }
+        .hidden { color: red; }
+        .summary { background: #f0f8ff; padding: 15px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>Realistic Browser Test Report</h1>
+    <div class="summary">
+        <h2>Test Summary</h2>
+        <p>This test simulates real user behavior by loading the page and taking screenshots at regular intervals without interference.</p>
+        <p>Generated at: 2025-07-09T21:05:16.481Z</p>
+    </div>
+
+    <div class="test-result">
+        <h2>chrometest.html</h2>
+        <div class="content-analysis">
+            <h3>Content After Events Section</h3>
+            <p>Found 0 content items after "Events"</p>
+<p class="hidden"><strong>⚠️ NO CONTENT FOUND AFTER EVENTS - This indicates the missing content issue!</strong></p>
+        </div>
+        <h3>Screenshot Timeline</h3>
+        <div class="screenshot-timeline">
+            <div class="screenshot">
+                <h4>Initial Load</h4>
+                <img src="chrometest.html-01-initial.png" alt="Initial">
+            </div>
+            <div class="screenshot">
+                <h4>After 2 seconds</h4>
+                <img src="chrometest.html-02-final.png" alt="Final">
+            </div>
+        </div>
+    </div>
+
+    <div class="test-result">
+        <h2>chrometest-ultimate-simple.html</h2>
+        <div class="content-analysis">
+            <h3>Content After Events Section</h3>
+            <p>Found 10 content items after "Events"</p>
+<ul><li class="visible">"This section contains events that should be visible after PagedJS processing...." - ✅ Visible</li><li class="visible">"Reportable Events..." - ✅ Visible</li><li class="visible">"Reportable event 1: This content should be visible in the final output...." - ✅ Visible</li><li class="visible">"Reportable event 2: This content should also be visible in the final output...." - ✅ Visible</li><li class="visible">"Disease: Syphilis..." - ✅ Visible</li><li class="visible">"Event type: Diagnosis..." - ✅ Visible</li><li class="visible">"Onset date: 2024-01-15..." - ✅ Visible</li><li class="visible">"Date reported: 2024-01-20..." - ✅ Visible</li><li class="visible">"Age at onset: 45 years..." - ✅ Visible</li><li class="visible">"Status: Active..." - ✅ Visible</li></ul>
+        </div>
+        <h3>Screenshot Timeline</h3>
+        <div class="screenshot-timeline">
+            <div class="screenshot">
+                <h4>Initial Load</h4>
+                <img src="chrometest-ultimate-simple.html-01-initial.png" alt="Initial">
+            </div>
+            <div class="screenshot">
+                <h4>After 2 seconds</h4>
+                <img src="chrometest-ultimate-simple.html-02-final.png" alt="Final">
+            </div>
+        </div>
+    </div>
+
+    <div class="test-result">
+        <h2>chrometest-with-fix.html</h2>
+        <div class="content-analysis">
+            <h3>Content After Events Section</h3>
+            <p>Found 10 content items after "Events"</p>
+<ul><li class="visible">"Reportable
+                                                                                         ..." - ✅ Visible</li><li class="visible">"Reportable
+                                                                                         ..." - ✅ Visible</li><li class="hidden">"Opens
+                                                                                              ..." - ❌ Hidden</li><li class="visible">"Disease
+                                                                                            ..." - ✅ Visible</li><li class="visible">"Syphilis
+                                                                                           ..." - ✅ Visible</li><li class="hidden">"Opens
+                                                                                              ..." - ❌ Hidden</li><li class="visible">"Event
+                                                                                              ..." - ✅ Visible</li><li class="visible">"Onset
+                                                                                              ..." - ✅ Visible</li><li class="visible">"Date
+                                                                                               ..." - ✅ Visible</li><li class="visible">"Age
+                                                                                                ..." - ✅ Visible</li></ul>
+        </div>
+        <h3>Screenshot Timeline</h3>
+        <div class="screenshot-timeline">
+            <div class="screenshot">
+                <h4>Initial Load</h4>
+                <img src="chrometest-with-fix.html-01-initial.png" alt="Initial">
+            </div>
+            <div class="screenshot">
+                <h4>After 2 seconds</h4>
+                <img src="chrometest-with-fix.html-02-final.png" alt="Final">
+            </div>
+        </div>
+    </div>
+</body></html>
