@@ -2,7 +2,7 @@
 
 ## Problem Description
 
-There is a reproducible infinite loop issue in PagedJS when rendering a specific HTML document. The issue causes the browser to freeze and consume excessive CPU resources during PDF generation.
+There is a reproducible infinite loop issue in PagedJS when rendering a specific HTML document. It causes pagedJS (which this project is a fork of) to not display a large block of content.
 
 ## Test Setup
 
