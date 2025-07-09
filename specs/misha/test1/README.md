@@ -44,10 +44,4 @@ This will:
 
 ## Next Steps
 
-Your task is to analyze this issue and develop a proper solution that:
-1. Fixes the root cause of the infinite loop
-2. Integrates cleanly with PagedJS
-3. Doesn't break other functionality
-4. Can be applied generally to prevent similar issues
-
-The POC fix works but is element-specific. We need a more robust solution. 
+Your task is to run the test above, so you can see the broken case, and the working case, before delving deeper.
