@@ -137,11 +137,33 @@ class Page {
 		let renderResult = await this.layoutMethod.renderTo(this.wrapper, contents, breakToken);
 		let newBreakToken = renderResult.breakToken;
 
+		this.removeBreakInsideAvoid();
+
 		this.addListeners(contents);
 
 		this.endToken = newBreakToken;
 
 		return newBreakToken;
+	}
+
+	/**
+	 * Rendered page content is already paginated, so a break-inside: avoid that
+	 * is still computed on it can only mislead the NEXT fragmentation pass: when
+	 * the page boxes are printed, the print engine re-fragments them, and Gecko
+	 * can hang forever ("Preparing Preview") trying to honor break-inside: avoid
+	 * on content that spilled into the hidden overflow column of the multi-column
+	 * page box. The declarations already did their job while this page was laid
+	 * out — strip them from the output.
+	 */
+	removeBreakInsideAvoid() {
+		if (!this.wrapper) {
+			return;
+		}
+		for (let el of this.wrapper.querySelectorAll("*")) {
+			if (window.getComputedStyle(el)["break-inside"] === "avoid") {
+				el.style.breakInside = "auto";
+			}
+		}
 	}
 
 	async append(contents, breakToken) {
@@ -152,6 +174,8 @@ class Page {
 
 		let renderResult = await this.layoutMethod.renderTo(this.wrapper, contents, breakToken);
 		let newBreakToken = renderResult.breakToken;
+
+		this.removeBreakInsideAvoid();
 
 		this.endToken = newBreakToken;
 
