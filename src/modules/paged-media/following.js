@@ -20,6 +20,11 @@ class Following extends Handler {
 	}
 
 	onRule(ruleNode, ruleItem, rulelist) {
+		// NthOfType also rewrites and removes rules, e.g. `:nth-of-type(2n+1)` matches both.
+		// Skip a rule it already removed: a second remove throws "item doesn't belong to list".
+		if (ruleItem.prev === null && rulelist.head !== ruleItem) {
+			return;
+		}
 		let selector = csstree.generate(ruleNode.prelude);
 		if (selector.match(/\+/)) {
 			
