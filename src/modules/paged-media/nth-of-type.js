@@ -20,6 +20,10 @@ class NthOfType extends Handler {
 	}
 
 	onRule(ruleNode, ruleItem, rulelist) {
+		// Following also rewrites and removes rules; skip a rule it already removed.
+		if (ruleItem.prev === null && rulelist.head !== ruleItem) {
+			return;
+		}
 		let selector = csstree.generate(ruleNode.prelude);
 		if (selector.match(/:(first|last|nth)-of-type/)) {
 			
